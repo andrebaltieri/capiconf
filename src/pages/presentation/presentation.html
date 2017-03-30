@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Palestra</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios">Fechar</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>{{ presentation.title }}</h3>
+  <ion-badge>{{ presentation.level }}</ion-badge>
+  <ion-badge>{{ presentation.language }}</ion-badge>
+  <span>{{ presentation.place }}</span>
+  <p><em>{{ presentation.description }}</em></p>
+  <hr>
+  <p class="text-center">
+    <img src="{{ presentation.speaker?.image }}" alt="{{presentation.speaker?.name}}" class="speaker-image">
+  </p>
+  <h1 class="text-center">{{ presentation.speaker?.name }}</h1>
+  <p class="text-center"><strong>{{ presentation.speaker?.title }}</strong></p>
+</ion-content>

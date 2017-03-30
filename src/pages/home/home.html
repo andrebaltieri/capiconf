@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <img src="assets/images/capivara_branca.svg" alt="Capivara Codes" width="120" class="header-image">
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-list no-lines>
+    <ion-item *ngFor="let speaker of speakers" (click)="showDetails(speaker)">
+      <ion-avatar item-left>
+        <img src="{{ speaker.image }}" alt="{{ speaker.name }}">
+      </ion-avatar>
+      <h2>{{ speaker.name }}</h2>
+      <h3>{{ speaker.title }}</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

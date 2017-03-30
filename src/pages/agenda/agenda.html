@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <img src="assets/images/capivara_branca.svg" alt="Capivara Codes" width="120" class="header-image">
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-list-header>Cronograma</ion-list-header>
+    <ion-item>
+      <ion-avatar item-left>
+        <h1>08<small>:00</small></h1>
+      </ion-avatar>
+      <h2>Credenciamento e Welcome Coffee</h2>
+      <h3>Auditório</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-left>
+        <h1>08<small>:30</small></h1>
+      </ion-avatar>
+      <h2>Abertura</h2>
+      <h3>Auditório</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-left>
+        <h1>12<small>:00</small></h1>
+      </ion-avatar>
+      <h2>Almoço</h2>
+      <h3>Auditório</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-left>
+        <h1>15<small>:00</small></h1>
+      </ion-avatar>
+      <h2>Coffee Break</h2>
+      <h3>Auditório</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-left>
+        <h1>17<small>:45</small></h1>
+      </ion-avatar>
+      <h2>Encerramento</h2>
+      <h3>Auditório</h3>
+    </ion-item>
+
+    <ion-list-header>Palestras</ion-list-header>
+    <div *ngFor="let item of agenda">
+      <ion-list-header>
+        <h1>{{ item.time }}</h1>
+      </ion-list-header>
+      <ion-item *ngFor="let presentation of item.presentations" (click)="showDetails(presentation)">
+        <ion-avatar item-left>
+          <img src="{{presentation.speaker.image}}" alt="{{presentation.speaker.name}}">
+        </ion-avatar>
+        <h2>{{presentation.title}}</h2>
+        <h3>{{presentation.speaker.name}}</h3>
+        <p><strong>{{presentation.place}}</strong></p>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
